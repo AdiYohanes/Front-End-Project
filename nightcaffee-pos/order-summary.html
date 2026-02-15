@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NightCaffe — Order Summary</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: { primary: "#10b981" },
+                    fontFamily: { display: ["Plus Jakarta Sans", "sans-serif"] },
+                },
+            },
+        };
+    </script>
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        :root {
+            --primary: #10b981;
+            --background: #fdfdfd;
+            --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+            --button-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            background-color: var(--background);
+        }
+    </style>
+</head>
+
+<body class="antialiased text-slate-900" style="font-family:'Plus Jakarta Sans',sans-serif;">
+
+    <!-- ====== Header ====== -->
+    <header class="sticky top-0 z-50 ios-blur border-b border-slate-100 px-4 h-14 flex items-center justify-between">
+        <a href="menu.html" class="flex items-center gap-1.5 text-[#10b981] active:opacity-50 transition-opacity">
+            <span class="material-symbols-outlined text-[24px] font-semibold">arrow_back_ios</span>
+            <span class="text-[17px] font-medium tracking-tight">Back</span>
+        </a>
+        <h1 class="text-[17px] font-bold tracking-tight absolute left-1/2 -translate-x-1/2">Summary</h1>
+        <div class="w-10"></div>
+    </header>
+
+    <!-- ====== Order Info ====== -->
+    <main class="pb-[320px] pt-6 px-5 space-y-6 page-enter">
+        <div class="flex justify-between items-end px-1">
+            <div class="space-y-1">
+                <span class="text-[11px] font-bold uppercase tracking-[0.1em] text-slate-400">Current Session</span>
+                <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">Order #2091213</h2>
+            </div>
+            <div class="bg-slate-100 rounded-full px-4 py-1.5">
+                <p class="text-[13px] font-bold text-slate-600">Table 12</p>
+            </div>
+        </div>
+
+        <!-- ====== Items ====== -->
+        <div class="space-y-4">
+            <!-- Item 1 -->
+            <div
+                class="item-card bg-white rounded-[24px] p-4 shadow-[var(--card-shadow)] border border-slate-50 flex gap-4">
+                <div class="w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0 bg-slate-50 border border-slate-100">
+                    <img alt="Grilled Ribeye" class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuACg7AhkejjEiA72fIOQ5ZczUwwf5cx6negMvj5vUDFewqSDdHNCL4XQjrdtweTWplRjUYM-I31O7p8b7pHgycnvXUNSWPZabK5E0yn3vkBK8gSMnUQ_KCSb94kdKJIM3qZPcXErkP4cQ9Pv6S9spMuVUiAj2qs-gDnoFUHSplqFW503jJNt8P3ysO7N5BRlUIqPkJsXy4ww2xGpEvOwIE7nzIuhR2lx1zB7Nd2C8dR1HkpNe6iqHmQclG4Ach14i4GnBn8ecK8MGs" />
+                </div>
+                <div class="flex-grow flex flex-col justify-between">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-[16px] text-slate-900 leading-tight">Grilled Ribeye Steak</h3>
+                            <p class="text-[13px] font-medium text-slate-400 mt-0.5">$24.00 / unit</p>
+                        </div>
+                        <button class="text-slate-300 hover:text-red-500 active:text-red-600 transition-colors p-1">
+                            <span class="material-symbols-outlined text-[22px]">delete</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="text-[18px] font-extrabold text-slate-900">$24.00</span>
+                        <div class="flex items-center gap-3 bg-slate-50 rounded-full p-1 border border-slate-100/50">
+                            <button
+                                class="w-8 h-8 flex items-center justify-center bg-white text-slate-900 rounded-full shadow-[var(--button-shadow)] active:scale-90 transition-all">
+                                <span class="material-symbols-outlined text-[18px] font-bold">remove</span>
+                            </button>
+                            <span class="text-sm font-bold w-4 text-center">1</span>
+                            <button
+                                class="w-8 h-8 flex items-center justify-center bg-white text-slate-900 rounded-full shadow-[var(--button-shadow)] active:scale-90 transition-all">
+                                <span class="material-symbols-outlined text-[18px] font-bold">add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div
+                class="item-card bg-white rounded-[24px] p-4 shadow-[var(--card-shadow)] border border-slate-50 flex gap-4">
+                <div class="w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0 bg-slate-50 border border-slate-100">
+                    <img alt="Coconut Rice" class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoIEjVk3swnsaG2vM3Nb_VB8bm4qPxbFCQQxStAxegl7V1RkSaLV33B6QIyHOsxQ7uvAzFAOuxaeF6bXDfRL69L_a7cWB0GmPHnUyfvTWGwJDSrN2-9GHS1sdSd7HcckcNMSFRVM7a8MtsxdQ4509p06Eg7Y3Cp8LZ2y_kXY4J6wN_m41QZtD1XA7XkUaCkMrw1MAmTMaf0_TwbJCvtc8kULr9AwuYvileDN02s95DX5k1K4ofahGmQQD8KhhYbhYD-z8HMBovhws" />
+                </div>
+                <div class="flex-grow flex flex-col justify-between">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-[16px] text-slate-900 leading-tight">Fragrant Coconut Rice</h3>
+                            <p class="text-[13px] font-medium text-slate-400 mt-0.5">$6.50 / unit</p>
+                        </div>
+                        <button class="text-slate-300 hover:text-red-500 active:text-red-600 transition-colors p-1">
+                            <span class="material-symbols-outlined text-[22px]">delete</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="text-[18px] font-extrabold text-slate-900">$13.00</span>
+                        <div class="flex items-center gap-3 bg-slate-50 rounded-full p-1 border border-slate-100/50">
+                            <button
+                                class="w-8 h-8 flex items-center justify-center bg-white text-slate-900 rounded-full shadow-[var(--button-shadow)] active:scale-90 transition-all">
+                                <span class="material-symbols-outlined text-[18px] font-bold">remove</span>
+                            </button>
+                            <span class="text-sm font-bold w-4 text-center">2</span>
+                            <button
+                                class="w-8 h-8 flex items-center justify-center bg-white text-slate-900 rounded-full shadow-[var(--button-shadow)] active:scale-90 transition-all">
+                                <span class="material-symbols-outlined text-[18px] font-bold">add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div
+                class="item-card bg-white rounded-[24px] p-4 shadow-[var(--card-shadow)] border border-slate-50 flex gap-4">
+                <div class="w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0 bg-slate-50 border border-slate-100">
+                    <img alt="Matcha Latte" class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCczyZgoTLEPcE7349ZqsZAZ2x8aldsgpX6Rl39lnofg4SgmgxGDzfGVhj0HXKG1hyYT2PpT2J6R_0xUWrNhzX_ZW4W092Izu1FiIKADDp4d8XNTWTscG_sKPvk_Udm7GtTecKzccAl-a2fkrn8x3lKsyH--xpWqpUBCxiCqAa0z-IYpC0we6hCZUmf8HHeEOPq3MXHaHLNR38tK-IzePFjPsFWiXCgBGaisa4SbXjNh64rPxQs0IzFAiHQzqyg5CjEDoKRlHHFmis" />
+                </div>
+                <div class="flex-grow flex flex-col justify-between">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-[16px] text-slate-900 leading-tight">Iced Matcha Latte</h3>
+                            <p class="text-[13px] font-medium text-slate-400 mt-0.5">$5.00 / unit</p>
+                        </div>
+                        <button class="text-slate-300 hover:text-red-500 active:text-red-600 transition-colors p-1">
+                            <span class="material-symbols-outlined text-[22px]">delete</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="text-[18px] font-extrabold text-slate-900">$5.00</span>
+                        <div class="flex items-center gap-3 bg-slate-50 rounded-full p-1 border border-slate-100/50">
+                            <button
+                                class="w-8 h-8 flex items-center justify-center bg-white text-slate-900 rounded-full shadow-[var(--button-shadow)] active:scale-90 transition-all">
+                                <span class="material-symbols-outlined text-[18px] font-bold">remove</span>
+                            </button>
+                            <span class="text-sm font-bold w-4 text-center">1</span>
+                            <button
+                                class="w-8 h-8 flex items-center justify-center bg-white text-slate-900 rounded-full shadow-[var(--button-shadow)] active:scale-90 transition-all">
+                                <span class="material-symbols-outlined text-[18px] font-bold">add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ====== Footer — Totals & Confirm ====== -->
+    <footer
+        class="fixed bottom-0 left-0 right-0 z-50 p-6 ios-blur border-t border-slate-100 rounded-t-[32px] shadow-2xl">
+        <div class="max-w-md mx-auto space-y-6">
+            <div class="space-y-3 px-1">
+                <div class="flex justify-between items-center">
+                    <span class="text-[15px] font-medium text-slate-500">Subtotal</span>
+                    <span class="text-[16px] font-bold text-slate-700">$42.00</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-[15px] font-medium text-slate-500">Tax (10%)</span>
+                    <span class="text-[16px] font-bold text-slate-700">$4.20</span>
+                </div>
+                <div class="pt-4 mt-2 border-t border-slate-100 flex justify-between items-center">
+                    <span class="text-[18px] font-bold text-slate-900 tracking-tight">Grand Total</span>
+                    <span class="text-[28px] font-black text-slate-900 tracking-tighter leading-none">$46.20</span>
+                </div>
+            </div>
+            <a href="payment.html"
+                class="group w-full bg-[#10b981] hover:bg-emerald-600 text-white h-[64px] rounded-[22px] shadow-lg shadow-emerald-200/50 transition-all active:scale-[0.97] flex items-center justify-center gap-3">
+                <span class="text-[18px] font-bold tracking-tight">Confirm Order</span>
+                <span
+                    class="material-symbols-outlined font-bold text-[22px] group-active:translate-x-1 transition-transform">arrow_forward</span>
+            </a>
+            <div class="h-2"></div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

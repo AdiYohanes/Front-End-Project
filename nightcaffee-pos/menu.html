@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NightCaffe — Menu</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#22C55E",
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#0F172A",
+                    },
+                    fontFamily: {
+                        display: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                    borderRadius: { DEFAULT: "12px" },
+                },
+            },
+        };
+    </script>
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        :root {
+            --primary-color: #22C55E;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased selection:bg-primary/20">
+
+    <div class="max-w-md mx-auto min-h-screen bg-background-light dark:bg-background-dark relative flex flex-col">
+        <div class="ios-status-bar w-full"></div>
+
+        <!-- ====== Header ====== -->
+        <header class="px-5 pt-4 pb-2">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h1 class="text-2xl font-bold tracking-tight">Welcome 👋</h1>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs">NightCaffe, Downtown Branch</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="flex flex-col items-end mr-2">
+                        <p class="text-[11px] font-bold leading-none">M.Naufal</p>
+                        <p class="text-[10px] text-slate-400">+62xxxx923</p>
+                    </div>
+                    <div
+                        class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden border-2 border-white dark:border-slate-800 shadow-sm">
+                        <img alt="Profile avatar" class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5emrFdR7tuSao3hVbimyT909kePO-ZxzG05pQWv9sK2SDS-QBze1X-wYzZ6B8YOhWTemJ0g0L3TiwmYHrDff2frp-2rcIg-LmCG_XKRVYaQTE9VFit7JEFITsKRFcZRcONo2umM_NvKVsm5DxmITzfC3JrokIKjGOViJBVWoNhZd6fSNMr9siSBQRs_maDBNSqMaUUzAG64jyxmOP3PS5h97jXgpZq3Xa79LiGzvrSb9WFJ8UIe86M3stEn6kNh7pTko4-zJY8RA" />
+                    </div>
+                </div>
+            </div>
+            <!-- Search -->
+            <div class="relative group">
+                <span
+                    class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-[20px] group-focus-within:text-primary transition-colors">search</span>
+                <input
+                    class="w-full bg-white dark:bg-slate-800 border-none rounded-2xl py-3.5 pl-11 pr-4 shadow-sm focus:ring-2 focus:ring-primary/20 dark:placeholder:text-slate-500 text-sm"
+                    placeholder="Search menu" type="text" id="menu-search" />
+            </div>
+        </header>
+
+        <!-- ====== Category Tabs ====== -->
+        <nav class="flex overflow-x-auto no-scrollbar gap-3 px-5 py-4">
+            <button data-category-tab="all"
+                class="flex items-center gap-2 bg-primary text-white px-5 py-2 rounded-full font-semibold text-xs whitespace-nowrap shadow-lg shadow-primary/20">
+                <span class="material-symbols-outlined text-[18px]">restaurant_menu</span>
+                All Menu
+            </button>
+            <button data-category-tab="meals"
+                class="flex items-center gap-2 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-5 py-2 rounded-full font-semibold text-xs whitespace-nowrap border border-slate-100 dark:border-slate-700">
+                <span class="material-symbols-outlined text-[18px]">lunch_dining</span>
+                Meals
+            </button>
+            <button data-category-tab="drink"
+                class="flex items-center gap-2 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-5 py-2 rounded-full font-semibold text-xs whitespace-nowrap border border-slate-100 dark:border-slate-700">
+                <span class="material-symbols-outlined text-[18px]">local_bar</span>
+                Drink
+            </button>
+            <button data-category-tab="dessert"
+                class="flex items-center gap-2 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-5 py-2 rounded-full font-semibold text-xs whitespace-nowrap border border-slate-100 dark:border-slate-700">
+                <span class="material-symbols-outlined text-[18px]">icecream</span>
+                Dessert
+            </button>
+        </nav>
+
+        <!-- ====== Promo Banners ====== -->
+        <div class="flex overflow-x-auto no-scrollbar gap-4 px-5 mb-6">
+            <div
+                class="flex-shrink-0 w-72 rounded-3xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700/50 p-4 relative overflow-hidden flex gap-3">
+                <div class="flex-1 flex flex-col justify-center">
+                    <h3 class="text-sm font-bold leading-tight">Big Oni Hamburger</h3>
+                    <div class="mt-1">
+                        <span
+                            class="bg-primary/10 text-primary text-[8px] font-bold px-1.5 py-0.5 rounded uppercase">Available
+                            Now</span>
+                    </div>
+                    <button
+                        class="mt-3 text-[10px] font-bold text-slate-400 hover:text-primary transition-colors text-left">Order
+                        Now</button>
+                </div>
+                <div class="w-24 h-24 flex-shrink-0">
+                    <img alt="Big Oni" class="w-full h-full object-contain"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt8K1XmKzbPBuYpzrfDavf8TPKs_Yf30jpklSCX_ORg5qFt8z_EH7spAwRVgAr229yKUkzGVoNffgEjovv18_tJWIL3CTgoUbz2MnUwm-lJngajs6mIruBfbsdIFla3h83D2GJaHZTuKSwOx5ShqqjQYTvFzYoFLrB7Q4Hfq3ms04Ziyx2K4cugAEpBdNQR2A3Su8rOgptWqZZdbgk7qtigwkjNHTGo76C2IFcgukcbuP_bCfPxOgsdcGIHS6pomzWiCng6aV3NN4" />
+                </div>
+            </div>
+            <div
+                class="flex-shrink-0 w-72 rounded-3xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700/50 p-4 relative overflow-hidden flex gap-3">
+                <div class="flex-1 flex flex-col justify-center">
+                    <h3 class="text-sm font-bold leading-tight">Healty Delicious</h3>
+                    <div class="mt-1">
+                        <span
+                            class="bg-primary/10 text-primary text-[8px] font-bold px-1.5 py-0.5 rounded uppercase">Chef's
+                            Choice</span>
+                    </div>
+                    <button
+                        class="mt-3 text-[10px] font-bold text-slate-400 hover:text-primary transition-colors text-left">Order
+                        Now</button>
+                </div>
+                <div class="w-24 h-24 flex-shrink-0">
+                    <img alt="Healthy" class="w-full h-full object-cover rounded-xl"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDoivqup9oxEutOWr80yoPnOaPKd_sEflTI-9UZblcsdc7GoYJuo6vvU2Qv8wkU3jE0uMG0_vgCchPJYL2SY4f1UxASBwydRtk9DVQeGxKTZSNBirk46gzk_PBif-DpK4YKmZknhNmoTpdKJlU9iUHaW_ggSfNo-8PcTOGSdzzDj3CfOr9hIu7ATse6MHNpnT8YvERxDTRk4U5iXlXhcl53VUVf_NsdhC5BBi48Fv-pHp0j9jw32bDGm5oB0JB5JFUgNSV63qTrXc" />
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== Popular Items Grid ====== -->
+        <!-- pb-72 ensures content is visible above cart bar + bottom nav -->
+        <main class="flex-1 px-5 pb-72 page-enter">
+            <h2 class="text-base font-bold mb-4 flex items-center justify-between">
+                Popular Items
+                <span class="text-primary text-[11px] font-semibold cursor-pointer">See All</span>
+            </h2>
+            <div class="grid grid-cols-2 gap-4" id="menu-grid">
+                <!-- Item 1 — Grilled Ribeye -->
+                <div class="bg-white dark:bg-slate-800 rounded-[24px] p-2.5 shadow-sm border border-slate-100 dark:border-slate-700/50"
+                    data-item-category="meals" data-qty-group data-price="75000">
+                    <div class="relative mb-3 aspect-[4/3] overflow-hidden rounded-[18px]">
+                        <img alt="Grilled Ribeye" class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDoivqup9oxEutOWr80yoPnOaPKd_sEflTI-9UZblcsdc7GoYJuo6vvU2Qv8wkU3jE0uMG0_vgCchPJYL2SY4f1UxASBwydRtk9DVQeGxKTZSNBirk46gzk_PBif-DpK4YKmZknhNmoTpdKJlU9iUHaW_ggSfNo-8PcTOGSdzzDj3CfOr9hIu7ATse6MHNpnT8YvERxDTRk4U5iXlXhcl53VUVf_NsdhC5BBi48Fv-pHp0j9jw32bDGm5oB0JB5JFUgNSV63qTrXc" />
+                        <span
+                            class="absolute bottom-2 right-2 bg-amber-400 text-white text-[8px] font-bold px-1.5 py-0.5 rounded shadow-sm">50%
+                            OFF</span>
+                    </div>
+                    <h4 class="font-bold text-xs mb-0.5 line-clamp-1">Grilled Ribeye</h4>
+                    <p class="text-[9px] text-slate-400 mb-3">Rp. 150,000</p>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-sm text-slate-900 dark:text-white">Rp. 75,000</span>
+                        <div class="flex items-center gap-2">
+                            <button data-qty-minus
+                                class="bg-primary/10 text-primary w-6 h-6 rounded-lg flex items-center justify-center font-bold text-xs">—</button>
+                            <span data-qty-value class="text-xs font-bold">1</span>
+                            <button data-qty-plus
+                                class="bg-primary text-white w-6 h-6 rounded-lg flex items-center justify-center shadow-sm shadow-primary/20">
+                                <span class="material-symbols-outlined text-sm">add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 — Coconut Rice Delight -->
+                <div class="bg-white dark:bg-slate-800 rounded-[24px] p-2.5 shadow-sm border border-slate-100 dark:border-slate-700/50"
+                    data-item-category="meals" data-qty-group data-price="100000">
+                    <div class="relative mb-3 aspect-[4/3] overflow-hidden rounded-[18px]">
+                        <img alt="Coconut Rice" class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLtLsJzBu4rSdAbdmL9xVFfbFRBH4IzHIzHSw9oO-8JbcECKjykd1k6glDwo-YgnmK95WKgUxHGRPWc44gr4eVOLDd5GTcRh9awKDYJ2VXgA16p_GzX3x21pLrif6Cx-Z7WUIwaEEekX3QrWWse1zpe-ncAQWTXAxyJqjLmI2z2-scXbf7ymQUoLV3f1NaLAb01a9HCJsjc0WBHPK75GP4udYObyBehMLo4EFrr7tfJm3Br51NZxaIeR4s-tYlepeF0jAYbZ7_G2o" />
+                        <span
+                            class="absolute bottom-2 right-2 bg-amber-400 text-white text-[8px] font-bold px-1.5 py-0.5 rounded shadow-sm">50%
+                            OFF</span>
+                    </div>
+                    <h4 class="font-bold text-xs mb-0.5 line-clamp-1">Coconut Rice Delight</h4>
+                    <p class="text-[9px] text-slate-400 mb-3">Rp. 200,000</p>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-sm text-slate-900 dark:text-white">Rp. 100,000</span>
+                        <div class="flex items-center gap-2">
+                            <button data-qty-minus
+                                class="bg-primary/10 text-primary w-6 h-6 rounded-lg flex items-center justify-center font-bold text-xs">—</button>
+                            <span data-qty-value class="text-xs font-bold">2</span>
+                            <button data-qty-plus
+                                class="bg-primary text-white w-6 h-6 rounded-lg flex items-center justify-center shadow-sm shadow-primary/20">
+                                <span class="material-symbols-outlined text-sm">add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 — Cheesy Macaroni -->
+                <div class="bg-white dark:bg-slate-800 rounded-[24px] p-2.5 shadow-sm border border-slate-100 dark:border-slate-700/50"
+                    data-item-category="meals" data-qty-group data-price="175000">
+                    <div class="relative mb-3 aspect-[4/3] overflow-hidden rounded-[18px]">
+                        <img alt="Cheesy Macaroni" class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUq8Ad0eEMzg_wGXALH25vmUb_3GpSlxIDQIunHSfIG0onytn_AAI8Tov0iR0buZPyM05dmpAI-JQi8Q5H1rZuyZOKw8k4s4sA5HD14uSaweSYUplA5sd_tTGXxZ2WIXm2IjKK9ofb55BpxfSUpbyy3Jkw_hh-LhttGVMsjzhvT_mhPePjTcX9cp7CiKs0VB_XT_WXIMQV8EJlT-eXBP5bd-2wQIR_5r5IyT7gYyCiWsD4N7yIMekOnRGOi2CgT3t4peEgWBWLJrc" />
+                    </div>
+                    <h4 class="font-bold text-xs mb-0.5 line-clamp-1">Cheesy Macaroni</h4>
+                    <p class="text-[9px] text-slate-400 mb-3 opacity-0">spacer</p>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-sm text-slate-900 dark:text-white">Rp. 175,000</span>
+                        <div class="flex items-center gap-2">
+                            <button data-qty-minus
+                                class="bg-primary/10 text-primary w-6 h-6 rounded-lg flex items-center justify-center font-bold text-xs">—</button>
+                            <span data-qty-value class="text-xs font-bold">1</span>
+                            <button data-qty-plus
+                                class="bg-primary text-white w-6 h-6 rounded-lg flex items-center justify-center shadow-sm shadow-primary/20">
+                                <span class="material-symbols-outlined text-sm">add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 — Spicy Fried Rice -->
+                <div class="bg-white dark:bg-slate-800 rounded-[24px] p-2.5 shadow-sm border border-slate-100 dark:border-slate-700/50"
+                    data-item-category="meals" data-qty-group data-price="50000">
+                    <div class="relative mb-3 aspect-[4/3] overflow-hidden rounded-[18px]">
+                        <img alt="Spicy Fried Rice" class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAevpk_21Z4toLP30Dn_3tQ3SL361HjLVQDHDs-MKCyc0nEs3IivuQe1nwOkDwzAIejwoSNw6B2ENIxI4oZb4wvzzLtnj7pkjd0Pe1Ib-TptipPyRSnDuijdBDrPGmcxxf25xlLwOc67uSK9PgcEAiN6Z7E7MExP6_V7qi9SjjOj5UaYPQ4-1aRFh_0JYweevykz_sQls1iaAKOLZ8XvYIcN-MVSLuimSJ7HBiPTgeDQE2gGZPVQpSR8cSidiQRP-Y2onR0AN1PbPc" />
+                    </div>
+                    <h4 class="font-bold text-xs mb-0.5 line-clamp-1">Spicy Fried Rice</h4>
+                    <p class="text-[9px] text-slate-400 mb-3 opacity-0">spacer</p>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-sm text-slate-900 dark:text-white">Rp. 50,000</span>
+                        <div class="flex items-center gap-2">
+                            <button data-qty-minus
+                                class="bg-primary/10 text-primary w-6 h-6 rounded-lg flex items-center justify-center font-bold text-xs">—</button>
+                            <span data-qty-value class="text-xs font-bold">1</span>
+                            <button data-qty-plus
+                                class="bg-primary text-white w-6 h-6 rounded-lg flex items-center justify-center shadow-sm shadow-primary/20">
+                                <span class="material-symbols-outlined text-sm">add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- ====== AI Assistant Bubble ====== -->
+        <div class="fixed bottom-[188px] left-1/2 -translate-x-1/2 w-[90%] max-w-sm z-20">
+            <div
+                class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md p-1.5 pr-4 rounded-full shadow-lg border border-white/50 dark:border-slate-700/50 flex items-center gap-3">
+                <div
+                    class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-green-400 flex items-center justify-center text-white shadow-md">
+                    <span class="material-symbols-outlined text-[24px]">auto_awesome</span>
+                </div>
+                <div class="flex flex-col flex-1">
+                    <div class="flex items-center gap-2">
+                        <span class="text-[11px] font-bold text-slate-900 dark:text-white">Ask AI</span>
+                        <span class="text-[10px] text-slate-400 truncate">What do you want to eat?</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== Floating Cart Bar ====== -->
+        <div class="fixed bottom-[100px] left-1/2 -translate-x-1/2 w-[90%] max-w-sm z-30">
+            <div
+                class="bg-[#0A111F] p-2.5 rounded-[24px] shadow-2xl flex items-center justify-between border border-white/5">
+                <div class="flex items-center gap-3 pl-2">
+                    <div class="relative">
+                        <span class="material-symbols-outlined text-white text-[24px]">shopping_cart</span>
+                        <span id="cart-count"
+                            class="absolute -top-1.5 -right-1.5 bg-primary text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold border border-[#0A111F]">5</span>
+                    </div>
+                    <div>
+                        <p class="text-white/50 text-[9px] uppercase font-bold tracking-tight">TOTAL ORDER</p>
+                        <p id="cart-total" class="text-white text-sm font-bold">Rp. 550,500</p>
+                    </div>
+                </div>
+                <a href="order-summary.html"
+                    class="bg-primary text-white px-6 py-2.5 rounded-[18px] font-bold text-sm active:scale-95 transition-transform">
+                    View Cart
+                </a>
+            </div>
+        </div>
+
+        <!-- ====== Bottom Tab Navigation ====== -->
+        <nav
+            class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 px-2 pt-3 pb-8 z-40">
+            <div class="flex justify-around items-end">
+                <a href="menu.html" class="flex flex-col items-center gap-1 w-16 nav-active">
+                    <span class="material-symbols-outlined text-primary text-[26px]"
+                        style="font-variation-settings:'FILL' 1">home</span>
+                    <span class="text-[10px] font-semibold text-primary">Home</span>
+                </a>
+                <a href="order-history.html" class="flex flex-col items-center gap-1 w-16">
+                    <span class="material-symbols-outlined text-slate-400 text-[26px]">receipt_long</span>
+                    <span class="text-[10px] font-medium text-slate-400">Orders</span>
+                </a>
+                <a href="order-summary.html" class="flex flex-col items-center w-20 -mt-8 relative">
+                    <div
+                        class="bg-primary w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-green-200 dark:shadow-green-900/30 active:scale-95 transition-transform">
+                        <span class="material-symbols-outlined text-white text-[32px]">add</span>
+                    </div>
+                    <span class="text-[10px] font-medium text-slate-400 mt-1.5">New Order</span>
+                </a>
+                <a href="analytics.html" class="flex flex-col items-center gap-1 w-16">
+                    <span class="material-symbols-outlined text-slate-400 text-[26px]">bar_chart</span>
+                    <span class="text-[10px] font-medium text-slate-400">Analytics</span>
+                </a>
+                <a href="settings.html" class="flex flex-col items-center gap-1 w-16">
+                    <span class="material-symbols-outlined text-slate-400 text-[26px]">settings</span>
+                    <span class="text-[10px] font-medium text-slate-400">Settings</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- iOS Home Indicator -->
+        <div class="fixed bottom-1.5 left-1/2 -translate-x-1/2 w-32 h-1 bg-black/20 dark:bg-white/20 rounded-full z-50">
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <!-- Simple search filter -->
+    <script>
+        document.getElementById("menu-search")?.addEventListener("input", function () {
+            const query = this.value.toLowerCase();
+            document.querySelectorAll("#menu-grid > div").forEach(card => {
+                const name = card.querySelector("h4")?.textContent.toLowerCase() || "";
+                card.style.display = name.includes(query) ? "" : "none";
+            });
+        });
+    </script>
+</body>
+
+</html>

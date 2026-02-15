@@ -1,0 +1,107 @@
+/* ============================================
+   NightCaffee POS — Design System
+   ============================================
+   Font  : Plus Jakarta Sans (Google Fonts)
+   Icons : Material Symbols Outlined
+   Colors: --primary #22C55E (green)
+   CSS   : Tailwind CDN + custom utilities below
+   ============================================ */
+
+/* ---------- Base ---------- */
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 100dvh;
+}
+
+/* ---------- Custom scrollbar ---------- */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* ---------- Utility: hide scrollbar ---------- */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ---------- iOS chrome ---------- */
+.ios-status-bar { height: 44px; }
+.ios-home-indicator { height: 34px; }
+.ios-blur {
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+/* ---------- Material Symbols defaults ---------- */
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+/* ---------- Loading animations ---------- */
+@keyframes fillCup {
+  0% { height: 0%; }
+  50% { height: 70%; }
+  100% { height: 0%; }
+}
+@keyframes pulseIcon {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+@keyframes loadingBar {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+.loading-cup-liquid { animation: fillCup 3s ease-in-out infinite; }
+.pulse-animation { animation: pulseIcon 2s ease-in-out infinite; }
+.loading-bar { animation: loadingBar 2s infinite; }
+
+/* ---------- Keypad button (Payment page) ---------- */
+.keypad-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  height: 3.5rem;
+  width: 100%;
+  border-radius: 0.75rem;
+  transition: all 0.15s;
+  background: #fff;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  color: #1e293b;
+}
+.keypad-btn:active {
+  transform: scale(0.95);
+  background: #e2e8f0;
+}
+.keypad-btn--muted {
+  background: #f8fafc;
+  border: none;
+  box-shadow: none;
+  color: #94a3b8;
+}
+
+/* ---------- Card interaction ---------- */
+.item-card { transition: transform 0.2s ease; }
+.item-card:active { transform: scale(0.99); }
+
+/* ---------- Subtle glow bg ---------- */
+.bg-subtle-glow {
+  background: radial-gradient(circle at center, rgba(34,197,94,0.05) 0%, transparent 70%);
+}
+
+/* ---------- Active bottom-nav icon fill ---------- */
+.nav-active .material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+/* ---------- Page transition ---------- */
+.page-enter {
+  animation: fadeSlideUp 0.3s ease forwards;
+}
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
