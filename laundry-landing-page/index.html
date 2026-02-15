@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Clean Laundry - Professional Laundry Service</title>
+    <meta name="description"
+        content="Clean Laundry provides premium laundry, dry cleaning, and ironing services with free pickup and delivery. Trusted by 2,500+ customers." />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FCA311",
+                        secondary: "#14213D",
+                        "accent-blue": "#3FA9F5",
+                        "background-light": "#F8FAFC",
+                        "surface-light": "#FFFFFF",
+                        "soft-blue": "#E0F2FE",
+                    },
+                    fontFamily: {
+                        display: ["Outfit", "sans-serif"],
+                        body: ["Outfit", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem",
+                        xl: "1rem",
+                        "2xl": "1.5rem",
+                        "3xl": "2rem",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: "Outfit", sans-serif;
+        }
+
+        .hero-pattern {
+            background-image: radial-gradient(#3fa9f5 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.1;
+        }
+
+        .blob-shape {
+            border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #3fa9f5;
+            border-radius: 50px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2596e6;
+        }
+
+        /* Scroll reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Active nav link */
+        .nav-link.active-link {
+            color: #3fa9f5;
+        }
+
+        .nav-link.active-link::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #3fa9f5;
+            border-radius: 999px;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light text-slate-800 font-body overflow-x-hidden">
+
+    <!-- ============================================ -->
+    <!-- NAVBAR                                       -->
+    <!-- ============================================ -->
+    <nav id="navbar"
+        class="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="#home" class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <span class="material-icons-round text-accent-blue text-4xl">local_laundry_service</span>
+                    <span class="font-bold text-2xl tracking-tight text-secondary">Clean<span
+                            class="text-accent-blue">Laundry</span></span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a class="nav-link text-slate-600 hover:text-accent-blue font-medium transition-colors"
+                        href="#home">Home</a>
+                    <a class="nav-link text-slate-600 hover:text-accent-blue font-medium transition-colors"
+                        href="#services">Services</a>
+                    <a class="nav-link text-slate-600 hover:text-accent-blue font-medium transition-colors"
+                        href="#process">Process</a>
+                    <a class="nav-link text-slate-600 hover:text-accent-blue font-medium transition-colors"
+                        href="#testimonials">Testimonials</a>
+                    <a class="nav-link text-slate-600 hover:text-accent-blue font-medium transition-colors"
+                        href="#contact">Contact</a>
+                </div>
+                <div class="hidden md:flex">
+                    <a class="bg-accent-blue hover:bg-blue-600 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-lg shadow-blue-500/30"
+                        href="#contact">
+                        Book Now
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="menu-toggle" class="md:hidden flex items-center text-slate-600 hover:text-accent-blue"
+                    aria-label="Toggle menu">
+                    <span class="material-icons-round text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-xl border-t border-slate-100 shadow-lg">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#home"
+                    class="mobile-link block py-3 text-slate-600 hover:text-accent-blue font-medium transition-colors">Home</a>
+                <a href="#services"
+                    class="mobile-link block py-3 text-slate-600 hover:text-accent-blue font-medium transition-colors">Services</a>
+                <a href="#process"
+                    class="mobile-link block py-3 text-slate-600 hover:text-accent-blue font-medium transition-colors">Process</a>
+                <a href="#testimonials"
+                    class="mobile-link block py-3 text-slate-600 hover:text-accent-blue font-medium transition-colors">Testimonials</a>
+                <a href="#contact"
+                    class="mobile-link block py-3 text-slate-600 hover:text-accent-blue font-medium transition-colors">Contact</a>
+                <a href="#contact"
+                    class="block py-3 px-6 text-center bg-accent-blue text-white rounded-full font-semibold mt-2">Book
+                    Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- HERO SECTION                                 -->
+    <!-- ============================================ -->
+    <section id="home" class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full hero-pattern z-0 pointer-events-none"></div>
+        <div class="absolute top-20 right-0 w-[500px] h-[500px] bg-orange-100 rounded-full blur-3xl -z-10 opacity-60">
+        </div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-100 rounded-full blur-3xl -z-10 opacity-60">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 text-center lg:text-left">
+                    <div
+                        class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full bg-soft-blue text-accent-blue text-sm font-semibold">
+                        <span class="material-icons-round text-base">verified</span>
+                        #1 Rated Laundry Service
+                    </div>
+                    <h1 class="reveal text-5xl lg:text-6xl font-bold leading-tight text-secondary">
+                        Simplify Your Life with <br />
+                        <span class="text-accent-blue relative inline-block">
+                            Clean Laundry
+                            <svg class="absolute w-full h-3 -bottom-1 left-0 text-primary opacity-60" fill="none"
+                                viewBox="0 0 200 9" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M2.00025 6.99997C25.7509 9.36111 78.9335 4.33333 130 6.99997C162.249 8.68367 172 2 196 2"
+                                    stroke="currentColor" stroke-width="3"></path>
+                            </svg>
+                        </span>
+                        Service
+                    </h1>
+                    <p class="reveal text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
+                        Pakaian Bersih, Hidup Lebih Mudah. For over 5 years, we have been dedicated to providing
+                        exceptional customer service and top quality dry cleaning and laundry services delivered to your
+                        door.
+                    </p>
+                    <div class="reveal flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a class="flex items-center justify-center gap-2 bg-accent-blue hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-xl shadow-blue-500/20 group"
+                            href="#contact">
+                            Get Started
+                            <span
+                                class="material-icons-round group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                        <a class="flex items-center justify-center gap-2 bg-white border border-slate-200 hover:border-accent-blue text-slate-700 px-8 py-4 rounded-full font-bold text-lg transition-all shadow-sm hover:shadow-md"
+                            href="#">
+                            <span class="material-icons-round text-primary">play_circle</span>
+                            Watch Video
+                        </a>
+                    </div>
+                    <div class="reveal flex items-center justify-center lg:justify-start gap-4 pt-4">
+                        <div class="flex -space-x-3">
+                            <img alt="Reviewer 1" class="w-10 h-10 rounded-full border-2 border-white object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU-kW_ApNVyTjxt83jQQYgWB9r3PMcRc3gUOjtqixZ-Cnr4J0BveRydbkPmnncCj-HOpIkdMhOcx8qk6GvHfzySitFuwaeYqKIgr_GLI4TV8vvf-BJ6TLjcYuHMwaNkWiKz6iiUe5QULinO2fgvXvxjPyfJ42GacsF1VLcObr_Rq51Kxl-VA01iGtAmFCgYFLGJSCiulY0RMttK0PjdrVv4sw0TXd22sNWYHSULZQhzTMwrQ6cpmy1ljjzanWAgqzGkr0BkMv-Q_c" />
+                            <img alt="Reviewer 2" class="w-10 h-10 rounded-full border-2 border-white object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSOQ8kdF4AMRdiiR6pzu5PeuCaExzCBqWgv17qSRcnxkQ5zazaDnEZt3j3_Nvdmdd_eemgbD1Pq49wNoidBtADRyC6nTzEYNYFTsm86-MTeUrNmB4OkKH2WaFLiF2Yb0Ef9vSiKsoXAMaZG7r1MjqDksl5pyZG6Zv9uG_cpzdf1HMvDmXdrywWkQjt4_RLx22UgWpg1cV1mEmcHQqzHHDHsNvrsnOSo4BQltTt1QKnBuwAZkO-NN5hYKzSytfXot1AL3AdR6ZFaj0" />
+                            <img alt="Reviewer 3" class="w-10 h-10 rounded-full border-2 border-white object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyP9jagdwHt1QrFmj9wfKq8aU0sSscp1HChTIOfX18b85yHg3gbyn3U8d2TV2fDB9e4V1MPbjSh2APHDOYbUpmxYrwMTl2M4lwlV7NjVZSFZw7Mm7qJ6HjhB7_TE8KlmRMzl7EjNGov1gyR0BeRL39GL_PAH1joLU4jGqD6NpddXMSbX1c0BTy0aTsQHF9xTd2a8Fp4jO7i0D2bKBvReJoWWcTZRdB9PXnfbb_Z8fXEN1QZGl1iYTS06-He3aQGD0R-sm1AsLIyYQ" />
+                            <div
+                                class="w-10 h-10 rounded-full border-2 border-white bg-secondary text-white flex items-center justify-center text-xs font-bold">
+                                +2k</div>
+                        </div>
+                        <div class="text-left">
+                            <div class="flex text-primary text-sm">
+                                <span class="material-icons-round text-base">star</span>
+                                <span class="material-icons-round text-base">star</span>
+                                <span class="material-icons-round text-base">star</span>
+                                <span class="material-icons-round text-base">star</span>
+                                <span class="material-icons-round text-base">star</span>
+                            </div>
+                            <p class="text-sm font-medium text-slate-500">4.8/5 from 2,500+ reviews</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal-right relative">
+                    <div class="absolute inset-0 bg-accent-blue/10 rounded-full blur-3xl transform scale-90"></div>
+                    <div class="absolute top-10 right-10 bg-white p-3 rounded-2xl shadow-xl animate-bounce"
+                        style="animation-duration: 3s">
+                        <span class="material-icons-round text-primary text-3xl">iron</span>
+                    </div>
+                    <div class="absolute bottom-20 left-10 bg-white p-3 rounded-2xl shadow-xl animate-bounce"
+                        style="animation-duration: 4s">
+                        <span class="material-icons-round text-accent-blue text-3xl">local_laundry_service</span>
+                    </div>
+                    <img alt="Smiling laundry professional holding fresh towels"
+                        class="relative z-10 w-full max-w-md mx-auto rounded-b-[100px] rounded-t-[40px] shadow-2xl border-4 border-white"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlVDTlYDcNFSPDE3Yj9uirONdbeQqWYyLEokogLd1bm-einjkYw8QejZxsAOzh4YsjhHwl6czKOPLTeWg9TnokdsFLmhlDFtFX-RTskiHI-960d9jLuWCA0ygLNTYaLo9dbUGpIfTpjKA1g4mM4iecRZnJp4MNdmOBTEZBYfLOKWc71cMd2n4rumEOKctR1IiOQjdfohrfSL4U87WvEpu9uQ4RwJEmawW2iUf4XGJeCQHDL9XVPtvO_vyWtHoN4LXbpoz0STFhI7o" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SERVICES SECTION                             -->
+    <!-- ============================================ -->
+    <section class="py-20 bg-white" id="services">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="reveal text-3xl md:text-4xl font-bold text-secondary mb-4">We make customers smile with
+                    <span class="text-primary italic">our services</span>
+                </h2>
+                <p class="reveal text-slate-600 max-w-2xl mx-auto">From delicate fabrics to everyday wear, our
+                    professional team ensures your clothes get the care they deserve.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Wash & Fold -->
+                <div
+                    class="reveal group bg-background-light rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-slate-100">
+                    <div class="h-56 overflow-hidden">
+                        <img alt="Wash and Fold Service"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjKJsjoKI-3mYwNh7M7ptfREG0_ytOUTAMwZHZZXpsplQGp7pOUVXmA-C_IQM4dsgalOK9IJEllcY5ljyHfB0ZR7xnmy5QxQJ16O9gN7YIqm6qYPSGqBrQzjZlWdydUZnxmyOCQYiyxkLD-NU03czYE6ZbCMUKulqhdZTU5przhnWNz_L6EpekPj4xfoGJo-ZkmD7ytsiFx631HFrgc4nFGkmH6Yq3H14dHBzWDQEKu-X3I0a53X3dvqdShCEcmEWlhfvc82-B-f8" />
+                    </div>
+                    <div class="p-8 relative">
+                        <div class="absolute -top-8 right-8 bg-white p-3 rounded-xl shadow-lg">
+                            <span class="material-icons-round text-accent-blue text-3xl">local_laundry_service</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary mb-2">Wash &amp; Fold</h3>
+                        <p class="text-slate-600 mb-6 text-sm">Perfect for your everyday laundry needs. We wash, dry,
+                            and neatly fold your clothes.</p>
+                        <a class="inline-flex items-center text-accent-blue font-semibold hover:text-blue-600 transition-colors"
+                            href="#">
+                            View Details <span class="material-icons-round text-sm ml-1">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Dry Cleaning -->
+                <div
+                    class="reveal group bg-background-light rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-slate-100">
+                    <div class="h-56 overflow-hidden">
+                        <img alt="Dry Cleaning Service"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP9KMx_leT_FfEAqLba1WruntH3YPCtIJKp9r605W8mkGN65tnjj-mYWhZmiOk15dLlNkXak1w7vO6_6GvL0PTfea7hJztumfyOVcauzEMtjPBuEidXTnglJ_vljXF6iabUWIoc-Iv3oORugxAGc4g5T932v5ikNrYqlUPSL2W0I0pJS3WVYpbI3hpy8Dz5bnXlmhJh16BN-xkqWJaafoye0w7gFHAa2b1tm9egpmXk3bphmNrShBDup9OE-64RGyOtFD5u0mbDu0" />
+                    </div>
+                    <div class="p-8 relative">
+                        <div class="absolute -top-8 right-8 bg-white p-3 rounded-xl shadow-lg">
+                            <span class="material-icons-round text-primary text-3xl">dry_cleaning</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary mb-2">Dry Cleaning</h3>
+                        <p class="text-slate-600 mb-6 text-sm">Special care for your delicate garments. Includes stain
+                            removal and pressing.</p>
+                        <a class="inline-flex items-center text-accent-blue font-semibold hover:text-blue-600 transition-colors"
+                            href="#">
+                            View Details <span class="material-icons-round text-sm ml-1">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Iron Clothes -->
+                <div
+                    class="reveal group bg-background-light rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-slate-100">
+                    <div class="h-56 overflow-hidden">
+                        <img alt="Ironing Service"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiX36FCmQjWCuqXfetGwrdB6ed3lEpty4iuWaz8tcW8HlgnhQAbvWsHNntHy847gbx0-4_1I7dyvcJ4GDDLzpibPrqGwg21T-WsZ_uaZ8NE8_CdERbONWAuO263PIrvKNxBrgLV89bvHQcnXQjBAfGEsAqg2aGOdLqpp_RTGmENYOIc16jHk2LAkOcSSjo_3tm0C-WJB4c9Y7RRiY8kZh9Cxu9gF2l1EwAp_R8lt3OuUMS0BljYHGrqT38kfFI-aPxLB8O9DOYpwM" />
+                    </div>
+                    <div class="p-8 relative">
+                        <div class="absolute -top-8 right-8 bg-white p-3 rounded-xl shadow-lg">
+                            <span class="material-icons-round text-green-500 text-3xl">iron</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary mb-2">Iron Clothes</h3>
+                        <p class="text-slate-600 mb-6 text-sm">Look sharp with our professional ironing service. Crisp
+                            lines, wrinkle-free.</p>
+                        <a class="inline-flex items-center text-accent-blue font-semibold hover:text-blue-600 transition-colors"
+                            href="#">
+                            View Details <span class="material-icons-round text-sm ml-1">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PROCESS SECTION                              -->
+    <!-- ============================================ -->
+    <section class="py-20 bg-soft-blue/30" id="process">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="reveal text-3xl md:text-4xl font-bold text-secondary mb-4">Our Working <span
+                        class="text-primary italic">Process</span></h2>
+                <div class="w-20 h-1 bg-accent-blue mx-auto rounded-full"></div>
+            </div>
+            <div class="relative">
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -z-10 -translate-y-1/2">
+                </div>
+                <div class="grid md:grid-cols-3 gap-12">
+                    <!-- Step 1 -->
+                    <div
+                        class="reveal bg-white p-8 rounded-3xl text-center shadow-lg hover:-translate-y-2 transition-transform duration-300">
+                        <div
+                            class="w-20 h-20 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-6 text-accent-blue">
+                            <span class="material-icons-round text-4xl">shopping_basket</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary mb-3">1. Laundry Collection</h3>
+                        <p class="text-slate-500 text-sm">Schedule a pickup online and our team collects your bagged
+                            laundry right at your doorstep.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div
+                        class="reveal bg-white p-8 rounded-3xl text-center shadow-lg hover:-translate-y-2 transition-transform duration-300">
+                        <div
+                            class="w-20 h-20 mx-auto bg-orange-100 rounded-full flex items-center justify-center mb-6 text-primary">
+                            <span class="material-icons-round text-4xl">cleaning_services</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary mb-3">2. Expert Cleaning</h3>
+                        <p class="text-slate-500 text-sm">We use eco-friendly detergents and top-tier machines to clean
+                            your items.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div
+                        class="reveal bg-white p-8 rounded-3xl text-center shadow-lg hover:-translate-y-2 transition-transform duration-300">
+                        <div
+                            class="w-20 h-20 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-6 text-green-600">
+                            <span class="material-icons-round text-4xl">local_shipping</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary mb-3">3. Convenient Delivery</h3>
+                        <p class="text-slate-500 text-sm">After cleaning, we deliver your neatly folded and fresh
+                            laundry back to you on time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- TESTIMONIALS SECTION                         -->
+    <!-- ============================================ -->
+    <section id="testimonials" class="py-20 bg-accent-blue text-white overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-10 rounded-full -translate-y-1/2 translate-x-1/2">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-96 h-96 bg-white opacity-10 rounded-full translate-y-1/2 -translate-x-1/2">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="md:w-1/3">
+                    <h2 class="reveal text-3xl md:text-4xl font-bold mb-6">What Our Happy Customers Say</h2>
+                    <p class="reveal text-blue-100 mb-8">We take pride in providing the best service possible. Here is
+                        what people are saying about Clean Laundry.</p>
+                    <div class="reveal flex gap-4">
+                        <button
+                            class="w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors">
+                            <span class="material-icons-round">arrow_back</span>
+                        </button>
+                        <button
+                            class="w-12 h-12 rounded-full bg-white text-accent-blue hover:bg-white/90 flex items-center justify-center transition-colors">
+                            <span class="material-icons-round">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-2/3 flex gap-6 overflow-x-auto pb-8 snap-x">
+                    <!-- Testimonial 1 -->
+                    <div
+                        class="reveal bg-white text-slate-800 p-8 rounded-2xl min-w-[300px] md:min-w-[400px] shadow-lg snap-center">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <img alt="Esther Miles" class="w-12 h-12 rounded-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0vBUXY9Z_fLR0SnoL-7h03qYcsBUefGk-OpHNdYkkD14fD38VrnUDp5XqWKblcHK1XYKu77mN0WCekQZZEcGyj1DuMNnhDgAcayHAxxncQUd_u6d1yuANKJVlKhRnDJghtlKh1s7FPXHjDlTzI2VOZkKPlKYt-JhWcs94izefbtq_z28BDCUyVZTORonaCG8xKaQPxuGqm568ir_8vRSibhgMkWU3lElvW3TAp2bAlkqcgXNOVXzdX6qewgqDbS2DyvMTscVNfvk" />
+                                <div>
+                                    <h4 class="font-bold">Esther Miles</h4>
+                                    <div class="flex text-primary text-xs">
+                                        <span class="material-icons-round text-sm">star</span>
+                                        <span class="material-icons-round text-sm">star</span>
+                                        <span class="material-icons-round text-sm">star</span>
+                                        <span class="material-icons-round text-sm">star</span>
+                                        <span class="material-icons-round text-sm">star</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="material-icons-round text-4xl text-blue-100">format_quote</span>
+                        </div>
+                        <p class="text-slate-600 italic">"I can't thank Clean Laundry enough for their impeccable
+                            service. My clothes have never looked better, and the convenience of pickup and delivery is
+                            unbeatable!"</p>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div
+                        class="reveal bg-white/90 text-slate-800 p-8 rounded-2xl min-w-[300px] md:min-w-[400px] shadow-lg snap-center">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <img alt="Ralph Edwards" class="w-12 h-12 rounded-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0ItCx1pxzYBiouGl1cMmAtD9EvyfvOawP9hho1NAg7OZAdF4oiKdaNCfTULBTVBYNpu3BjCpKU9WLrz22M8IybjxjjkCHs71Rb0K9Gj6NHgMev1qP8t8Pw1WT4j4FncBr3SxkvRcE_ExGhMp60pe0Vu66IDsMr_r-33p7AEZ0tjib1Ztdepl6PnFVZh7k71BjNtcmdDVMLmhcduC2eE3e2dhTiv87oRAzCzYM7E7Hp00f7rrMKklikAKEHhF4SqOHYsZqG-mSHVk" />
+                                <div>
+                                    <h4 class="font-bold">Ralph Edwards</h4>
+                                    <div class="flex text-primary text-xs">
+                                        <span class="material-icons-round text-sm">star</span>
+                                        <span class="material-icons-round text-sm">star</span>
+                                        <span class="material-icons-round text-sm">star</span>
+                                        <span class="material-icons-round text-sm">star</span>
+                                        <span class="material-icons-round text-sm">star</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="material-icons-round text-4xl text-blue-100">format_quote</span>
+                        </div>
+                        <p class="text-slate-600 italic">"The dry cleaning quality is top-notch. They removed a stain I
+                            thought was permanent. Highly recommended for busy professionals."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CONTACT / CTA SECTION                        -->
+    <!-- ============================================ -->
+    <section id="contact" class="py-20 bg-background-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <div>
+                    <h2 class="reveal text-3xl font-bold text-secondary mb-6">Lets <span
+                            class="text-primary italic">Talk</span> With Us</h2>
+                    <p class="reveal text-slate-600 mb-8">Have questions or ready to schedule your first pickup? Fill
+                        out the form and we'll get back to you instantly.</p>
+                    <div class="reveal-left bg-accent-blue rounded-3xl p-8 text-white relative overflow-hidden">
+                        <div class="relative z-10 space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-white/20 p-2 rounded-lg">
+                                    <span class="material-icons-round text-xl">phone</span>
+                                </div>
+                                <div>
+                                    <p class="text-blue-100 text-sm">Phone Number</p>
+                                    <p class="font-bold text-lg">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-white/20 p-2 rounded-lg">
+                                    <span class="material-icons-round text-xl">email</span>
+                                </div>
+                                <div>
+                                    <p class="text-blue-100 text-sm">Email Address</p>
+                                    <p class="font-bold text-lg">hello@cleanlaundry.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-white/20 p-2 rounded-lg">
+                                    <span class="material-icons-round text-xl">location_on</span>
+                                </div>
+                                <div>
+                                    <p class="text-blue-100 text-sm">Location</p>
+                                    <p class="font-bold text-lg">123 Laundry Lane, Clean City</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full"></div>
+                    </div>
+                </div>
+                <form id="contact-form" class="reveal-right bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Name</label>
+                            <input
+                                class="w-full bg-slate-50 border-none rounded-xl px-4 py-3 text-slate-900 focus:ring-2 focus:ring-accent-blue"
+                                placeholder="Your full name" type="text" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Email</label>
+                            <input
+                                class="w-full bg-slate-50 border-none rounded-xl px-4 py-3 text-slate-900 focus:ring-2 focus:ring-accent-blue"
+                                placeholder="Email address" type="email" />
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Phone</label>
+                            <input
+                                class="w-full bg-slate-50 border-none rounded-xl px-4 py-3 text-slate-900 focus:ring-2 focus:ring-accent-blue"
+                                placeholder="Phone Number" type="tel" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Service Type</label>
+                            <select
+                                class="w-full bg-slate-50 border-none rounded-xl px-4 py-3 text-slate-900 focus:ring-2 focus:ring-accent-blue">
+                                <option>Wash &amp; Fold</option>
+                                <option>Dry Cleaning</option>
+                                <option>Ironing</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Message</label>
+                        <textarea
+                            class="w-full bg-slate-50 border-none rounded-xl px-4 py-3 text-slate-900 focus:ring-2 focus:ring-accent-blue"
+                            placeholder="Tell us more about your needs..." rows="4"></textarea>
+                    </div>
+                    <button
+                        class="w-full bg-primary hover:bg-orange-500 text-white font-bold py-4 rounded-xl shadow-lg shadow-orange-500/30 transition-all">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER                                       -->
+    <!-- ============================================ -->
+    <footer class="bg-secondary text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div class="space-y-6">
+                    <div class="flex items-center gap-2">
+                        <span class="material-icons-round text-accent-blue text-3xl">local_laundry_service</span>
+                        <span class="font-bold text-2xl tracking-tight">Clean<span
+                                class="text-accent-blue">Laundry</span></span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">We are professional laundry service provider
+                        dedicated to making your life easier with clean clothes.</p>
+                    <div class="flex gap-4">
+                        <a class="w-10 h-10 rounded-full bg-white/10 hover:bg-accent-blue flex items-center justify-center transition-colors"
+                            href="#" aria-label="Facebook"><span class="text-lg font-bold">f</span></a>
+                        <a class="w-10 h-10 rounded-full bg-white/10 hover:bg-accent-blue flex items-center justify-center transition-colors"
+                            href="#" aria-label="Twitter"><span class="text-lg font-bold">t</span></a>
+                        <a class="w-10 h-10 rounded-full bg-white/10 hover:bg-accent-blue flex items-center justify-center transition-colors"
+                            href="#" aria-label="LinkedIn"><span class="text-lg font-bold">in</span></a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a class="hover:text-primary transition-colors" href="#home">Home</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#services">Services</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#testimonials">Testimonials</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Our Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Our Services</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a class="hover:text-primary transition-colors" href="#">Dry Cleaning</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Wash &amp; Fold</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Ironing Services</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Leather Cleaning</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Commercial Laundry</a></li>
+                    </ul>
+                </div>
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Newsletter</h4>
+                    <p class="text-slate-400 text-sm mb-4">Subscribe to our newsletter to get latest updates and offers.
+                    </p>
+                    <form class="space-y-2">
+                        <input
+                            class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:ring-1 focus:ring-accent-blue focus:border-accent-blue"
+                            placeholder="Enter your email" type="email" />
+                        <button
+                            class="w-full bg-accent-blue hover:bg-blue-600 text-white font-bold py-3 rounded-lg transition-colors">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- Bottom bar -->
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">&copy; 2025 Clean Laundry. All Rights Reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+                    <a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
